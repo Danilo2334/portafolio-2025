@@ -1,4 +1,3 @@
-//Nuevo Inicio.tsx
 "use client"
 
 import { ArrowRight, Download } from "lucide-react"
@@ -27,14 +26,14 @@ export default function Inicio() {
             width: "100%",
             maxWidth: "90rem",
             gap: "2rem",
-            flexWrap: "wrap", // Soporta responsive
+            flexWrap: "wrap",
           }}
         >
-          {/* IZQUIERDA: TÍTULO + BOTONES */}
+          {/* IZQUIERDA */}
           <div
             style={{
               maxWidth: "40rem",
-              flex: "1 1 300px", // base en móvil
+              flex: "1 1 300px",
             }}
           >
             <h1
@@ -67,7 +66,7 @@ export default function Inicio() {
                 textAlign: "center",
               }}
             >
-              Ingeniero de Software en proceso de formacion
+              Ingeniero de Software en proceso de formación
             </p>
 
             <div
@@ -97,12 +96,8 @@ export default function Inicio() {
                   width: "100%",
                   maxWidth: "240px",
                 }}
-                onMouseOver={(e) =>
-                  (e.currentTarget.style.backgroundColor = "#0d3d23")
-                }
-                onMouseOut={(e) =>
-                  (e.currentTarget.style.backgroundColor = "#1a5d38")
-                }
+                onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#0d3d23")}
+                onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#1a5d38")}
               >
                 <Download style={{ width: "1rem", height: "1rem" }} />
                 Descargar CV
@@ -140,7 +135,7 @@ export default function Inicio() {
             </div>
           </div>
 
-          {/* DERECHA: FOTO REDONDEADA */}
+          {/* DERECHA */}
           <div
             style={{
               borderRadius: "9999px",

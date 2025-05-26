@@ -6,7 +6,8 @@ export default function Proyectos() {
   const proyectos = [
     {
       titulo: "Card - QATAR AIRWAYS",
-      descripcion: "Clon visual de un pase de abordar hecho en Next.js + Tailwind, replicado a partir de un diseño dado.",
+      descripcion:
+        "Clon visual de un pase de abordar hecho en Next.js + Tailwind, replicado a partir de un diseño dado.",
       tecnologias: ["Next.js", "Tailwind CSS"],
       imagen: "/card-qatar.png",
       demo: "https://examen-momento-bdbz.vercel.app/",
@@ -14,7 +15,8 @@ export default function Proyectos() {
     },
     {
       titulo: "Tinger Landing Page",
-      descripcion: "Landing page visualmente moderna con animación de encendido/apagado. Basado en un diseño entregado.",
+      descripcion:
+        "Landing page visualmente moderna con animación de encendido/apagado. Basado en un diseño entregado.",
       tecnologias: ["Next.js", "Tailwind CSS", "Modo Oscuro"],
       imagen: "/tinger.png",
       demo: "https://ejercicio-taller-window-ui.vercel.app/",
@@ -22,7 +24,8 @@ export default function Proyectos() {
     },
     {
       titulo: "Panel de Preferencias UI",
-      descripcion: "Panel interactivo con personalización de tema, idioma y accesibilidad. Preciso visualmente.",
+      descripcion:
+        "Panel interactivo con personalización de tema, idioma y accesibilidad. Preciso visualmente.",
       tecnologias: ["Next.js", "Tailwind CSS", "UI moderna"],
       imagen: "/ui-panel.png",
       demo: "https://prueba-ia-beta.vercel.app/",
@@ -42,10 +45,24 @@ export default function Proyectos() {
         alignItems: "center",
       }}
     >
-      <h2 style={{ fontSize: "2.5rem", fontWeight: 700, color: "#2a8d53", marginBottom: "0.5rem" }}>
+      <h2
+        style={{
+          fontSize: "2.5rem",
+          fontWeight: 700,
+          color: "#2a8d53",
+          marginBottom: "0.5rem",
+        }}
+      >
         Mis Proyectos
       </h2>
-      <p style={{ marginBottom: "2rem", color: "#a1a1aa", textAlign: "center", maxWidth: "700px" }}>
+      <p
+        style={{
+          marginBottom: "2rem",
+          color: "#a1a1aa",
+          textAlign: "center",
+          maxWidth: "700px",
+        }}
+      >
         Una selección de los proyectos en los que he trabajado, demostrando mis habilidades y experiencia.
       </p>
 
@@ -92,10 +109,22 @@ export default function Proyectos() {
             )}
 
             <div style={{ padding: "1.5rem" }}>
-              <h3 style={{ fontSize: "1.125rem", fontWeight: 700, marginBottom: "0.5rem" }}>
+              <h3
+                style={{
+                  fontSize: "1.125rem",
+                  fontWeight: 700,
+                  marginBottom: "0.5rem",
+                }}
+              >
                 {proyecto.titulo}
               </h3>
-              <p style={{ fontSize: "0.875rem", color: "#a1a1aa", marginBottom: "1rem" }}>
+              <p
+                style={{
+                  fontSize: "0.875rem",
+                  color: "#a1a1aa",
+                  marginBottom: "1rem",
+                }}
+              >
                 {proyecto.descripcion}
               </p>
               <div

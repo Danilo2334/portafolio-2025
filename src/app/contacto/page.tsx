@@ -31,7 +31,6 @@ export default function Contacto() {
           gap: "2rem",
         }}
       >
-        {/* Formulario */}
         <form
           style={{
             backgroundColor: "#1a1a1a",
@@ -77,7 +76,6 @@ export default function Contacto() {
           </button>
         </form>
 
-        {/* Información de contacto */}
         <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
           <div
             style={{

@@ -93,6 +93,7 @@ export default function Testimonios() {
             padding: "0.5rem",
             color: "white",
           }}
+          aria-label="Anterior"
         >
           <ChevronLeft size={20} />
         </button>
@@ -110,6 +111,7 @@ export default function Testimonios() {
             padding: "0.5rem",
             color: "white",
           }}
+          aria-label="Siguiente"
         >
           <ChevronRight size={20} />
         </button>

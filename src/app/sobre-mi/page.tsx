@@ -44,10 +44,10 @@ export default function SobreMi() {
           }}
         >
           <p>
-            Mi nombre es Erik Danilo Carlosama Muñoz, soy ingeniero en software 
+            Mi nombre es Erik Danilo Carlosama Muñoz, soy ingeniero en software.
           </p>
           <p style={{ marginTop: "1rem" }}>
-            Cuento con sólidos conocimientos 
+            Cuento con sólidos conocimientos.
           </p>
         </div>
 
@@ -67,7 +67,9 @@ export default function SobreMi() {
               borderRadius: "0.75rem",
             }}
           >
-            <h3 style={{ color: "#2a8d53", fontWeight: 600, marginBottom: "1rem" }}>Mis Habilidades</h3>
+            <h3 style={{ color: "#2a8d53", fontWeight: 600, marginBottom: "1rem" }}>
+              Mis Habilidades
+            </h3>
             <div
               style={{
                 display: "grid",
@@ -75,7 +77,12 @@ export default function SobreMi() {
                 gap: "1rem",
               }}
             >
-              {[{ titulo: "Desarrollo Frontend", detalle: "HTML, CSS, JavaScript, React" }, { titulo: "Frameworks", detalle: "Next.js, Tailwind CSS" }, { titulo: "Diseño UI/UX", detalle: "Figma" }, { titulo: "Herramientas", detalle: "Git, VS Code" }].map((item, i) => (
+              {[
+                { titulo: "Desarrollo Frontend", detalle: "HTML, CSS, JavaScript, React" },
+                { titulo: "Frameworks", detalle: "Next.js, Tailwind CSS" },
+                { titulo: "Diseño UI/UX", detalle: "Figma" },
+                { titulo: "Herramientas", detalle: "Git, VS Code" },
+              ].map((item, i) => (
                 <div
                   key={i}
                   style={{
@@ -88,7 +95,14 @@ export default function SobreMi() {
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    <span style={{ width: "8px", height: "8px", backgroundColor: "#2a8d53", borderRadius: "9999px" }}></span>
+                    <span
+                      style={{
+                        width: "8px",
+                        height: "8px",
+                        backgroundColor: "#2a8d53",
+                        borderRadius: "9999px",
+                      }}
+                    ></span>
                     <strong>{item.titulo}</strong>
                   </div>
                   <p style={{ color: "#a1a1aa" }}>{item.detalle}</p>
@@ -108,7 +122,14 @@ export default function SobreMi() {
             }}
           >
             <h3 style={{ color: "#2a8d53", fontWeight: 600 }}>Hobbies e Intereses</h3>
-            <div style={{ marginTop: "1rem", display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+            <div
+              style={{
+                marginTop: "1rem",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.75rem",
+              }}
+            >
               {["Gimnasio", "Videojuegos", "Lectura", "Música"].map((hobbie, i) => (
                 <span
                   key={i}

@@ -70,11 +70,11 @@ export default function Navbar() {
             padding: esMovil ? "1rem 2rem" : "0",
           }}
         >
-          <Link href="/" style={{ color: "white", textDecoration: "none" }}>Inicio</Link>
-          <Link href="/sobre-mi" style={{ color: "white", textDecoration: "none" }}>Sobre Mí</Link>
-          <Link href="/proyectos" style={{ color: "white", textDecoration: "none" }}>Proyectos</Link>
-          <Link href="/testimonios" style={{ color: "white", textDecoration: "none" }}>Testimonios</Link>
-          <Link href="/contacto" style={{ color: "white", textDecoration: "none" }}>Contacto</Link>
+          <Link href="/"><span style={{ color: "white", textDecoration: "none" }}>Inicio</span></Link>
+          <Link href="/sobre-mi"><span style={{ color: "white", textDecoration: "none" }}>Sobre Mí</span></Link>
+          <Link href="/proyectos"><span style={{ color: "white", textDecoration: "none" }}>Proyectos</span></Link>
+          <Link href="/testimonios"><span style={{ color: "white", textDecoration: "none" }}>Testimonios</span></Link>
+          <Link href="/contacto"><span style={{ color: "white", textDecoration: "none" }}>Contacto</span></Link>
         </nav>
       )}
 
@@ -95,23 +95,24 @@ export default function Navbar() {
           <Sun size={16} />
         </button>
 
-        <Link
-          href="/contacto"
-          style={{
-            backgroundColor: "var(--primary)",
-            color: "white",
-            padding: "0.5rem 1.25rem",
-            borderRadius: "9999px",
-            fontWeight: 500,
-            fontSize: "0.875rem",
-            textDecoration: "none",
-            lineHeight: "1",
-            display: "inline-block",
-            whiteSpace: "nowrap",
-            marginRight: "3.7rem",
-          }}
-        >
-          Contactar
+        <Link href="/contacto">
+          <span
+            style={{
+              backgroundColor: "var(--primary)",
+              color: "white",
+              padding: "0.5rem 1.25rem",
+              borderRadius: "9999px",
+              fontWeight: 500,
+              fontSize: "0.875rem",
+              textDecoration: "none",
+              lineHeight: "1",
+              display: "inline-block",
+              whiteSpace: "nowrap",
+              marginRight: "3.7rem",
+            }}
+          >
+            Contactar
+          </span>
         </Link>
       </div>
     </header>
