@@ -44,10 +44,10 @@ export default function SobreMi() {
           }}
         >
           <p>
-            Mi nombre es Erik Danilo Carlosama Muñoz, soy ingeniero en software con experiencia en desarrollo web y aplicaciones móviles. Me apasiona crear soluciones tecnológicas innovadoras que resuelvan problemas reales y mejoren la experiencia de los usuarios.
+            Mi nombre es Erik Danilo Carlosama Muñoz, soy ingeniero en software 
           </p>
           <p style={{ marginTop: "1rem" }}>
-            Cuento con sólidos conocimientos en lenguajes de programación como JavaScript, Python y frameworks modernos como React y Next.js, lo que me permite desarrollar aplicaciones web robustas y escalables.
+            Cuento con sólidos conocimientos 
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export default function SobreMi() {
                 gap: "1rem",
               }}
             >
-              {[{ titulo: "Desarrollo Frontend", detalle: "HTML, CSS, JavaScript, React" }, { titulo: "Frameworks", detalle: "Next.js, Tailwind CSS" }, { titulo: "Diseño UI/UX", detalle: "Figma, Adobe XD" }, { titulo: "Herramientas", detalle: "Git, VS Code, npm" }].map((item, i) => (
+              {[{ titulo: "Desarrollo Frontend", detalle: "HTML, CSS, JavaScript, React" }, { titulo: "Frameworks", detalle: "Next.js, Tailwind CSS" }, { titulo: "Diseño UI/UX", detalle: "Figma" }, { titulo: "Herramientas", detalle: "Git, VS Code" }].map((item, i) => (
                 <div
                   key={i}
                   style={{

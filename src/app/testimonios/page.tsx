@@ -11,14 +11,14 @@ const testimonios = [
       "Un estudiante excepcional con gran capacidad para resolver problemas complejos. Sus proyectos siempre destacan por su calidad y atención al detalle.",
   },
   {
-    autor: "Ingeniera Rojas",
-    cargo: "Mentora de Proyectos",
+    autor: "Compañero Sebastian Rojas",
+    cargo: "Estudiante Ing Software",
     mensaje:
       "Tiene una gran capacidad para trabajar en equipo y liderar iniciativas técnicas. Siempre cumple con los objetivos propuestos.",
   },
   {
-    autor: "Compañero Díaz",
-    cargo: "Colaborador de Hackathon",
+    autor: "Compañero Francisco Molina",
+    cargo: "Estudiante Ing Software",
     mensaje:
       "Es muy organizado, creativo y proactivo. Fue un gusto trabajar con él en el desarrollo de soluciones innovadoras.",
   },

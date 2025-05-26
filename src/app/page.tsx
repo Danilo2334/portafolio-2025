@@ -67,8 +67,7 @@ export default function Inicio() {
                 textAlign: "center",
               }}
             >
-              Ingeniero de Software especializado en crear experiencias digitales
-              atractivas y funcionales.
+              Ingeniero de Software en proceso de formacion
             </p>
 
             <div
@@ -197,7 +196,6 @@ export default function Inicio() {
           <span>Python</span>
           <span>JavaScript</span>
           <span>React</span>
-          <span>Next.js</span>
         </div>
       </section>
     </>
