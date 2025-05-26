@@ -1,7 +1,7 @@
 import "./globals.css"
 import type { Metadata } from "next"
 import Navbar from "@/components/ui/Navbar"
-import Footer from "../components/ui/Footer" // ✅ Agregado aquí
+import Footer from "../components/ui/Footer" 
 
 export const metadata: Metadata = {
   title: "Portafolio | Danilo Carlosama",
@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Navbar />
         <main style={{ paddingTop: "5rem" }}>{children}</main>
-        <Footer /> {/* ✅ Insertado correctamente */}
+        <Footer /> {/* Insertado correctamente */}
       </body>
     </html>
   )

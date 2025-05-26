@@ -1,3 +1,4 @@
+//Nuevo Inicio.tsx
 "use client"
 
 import { ArrowRight, Download } from "lucide-react"

@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Moon, Sun, Menu } from "lucide-react"
 import { useState, useEffect } from "react"
 
@@ -69,11 +70,11 @@ export default function Navbar() {
             padding: esMovil ? "1rem 2rem" : "0",
           }}
         >
-          <a href="/" style={{ color: "white", textDecoration: "none" }}>Inicio</a>
-          <a href="/sobre-mi" style={{ color: "white", textDecoration: "none" }}>Sobre Mí</a>
-          <a href="/proyectos" style={{ color: "white", textDecoration: "none" }}>Proyectos</a>
-          <a href="/testimonios" style={{ color: "white", textDecoration: "none" }}>Testimonios</a>
-          <a href="/contacto" style={{ color: "white", textDecoration: "none" }}>Contacto</a>
+          <Link href="/" style={{ color: "white", textDecoration: "none" }}>Inicio</Link>
+          <Link href="/sobre-mi" style={{ color: "white", textDecoration: "none" }}>Sobre Mí</Link>
+          <Link href="/proyectos" style={{ color: "white", textDecoration: "none" }}>Proyectos</Link>
+          <Link href="/testimonios" style={{ color: "white", textDecoration: "none" }}>Testimonios</Link>
+          <Link href="/contacto" style={{ color: "white", textDecoration: "none" }}>Contacto</Link>
         </nav>
       )}
 
@@ -94,7 +95,7 @@ export default function Navbar() {
           <Sun size={16} />
         </button>
 
-        <a
+        <Link
           href="/contacto"
           style={{
             backgroundColor: "var(--primary)",
@@ -111,7 +112,7 @@ export default function Navbar() {
           }}
         >
           Contactar
-        </a>
+        </Link>
       </div>
     </header>
   )
