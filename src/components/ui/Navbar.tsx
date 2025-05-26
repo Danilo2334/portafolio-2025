@@ -13,7 +13,6 @@ export default function Navbar() {
     document.documentElement.classList.toggle("dark", !darkMode)
   }
 
-  // Detectar si el dispositivo es móvil
   useEffect(() => {
     const verificarTamaño = () => setEsMovil(window.innerWidth < 768)
     verificarTamaño()
@@ -36,12 +35,10 @@ export default function Navbar() {
         borderBottom: "1px solid var(--border)",
       }}
     >
-      {/* Nombre */}
       <h1 style={{ fontWeight: 700, fontSize: "1.25rem", color: "#2a8d53" }}>
         Danilo Carlosama
       </h1>
 
-      {/* Menú hamburguesa (solo visible en móvil) */}
       {esMovil && (
         <button
           onClick={() => setMenuAbierto(!menuAbierto)}
@@ -58,7 +55,6 @@ export default function Navbar() {
         </button>
       )}
 
-      {/* Enlaces (visibles en desktop o al abrir menú en móvil) */}
       {(menuAbierto || !esMovil) && (
         <nav
           style={{
@@ -73,15 +69,14 @@ export default function Navbar() {
             padding: esMovil ? "1rem 2rem" : "0",
           }}
         >
-          <a href="#inicio" style={{ color: "white", textDecoration: "none" }}>Inicio</a>
-          <a href="#sobre-mi" style={{ color: "white", textDecoration: "none" }}>Sobre Mí</a>
-          <a href="#proyectos" style={{ color: "white", textDecoration: "none" }}>Proyectos</a>
-          <a href="#testimonios" style={{ color: "white", textDecoration: "none" }}>Testimonios</a>
-          <a href="#contacto" style={{ color: "white", textDecoration: "none" }}>Contacto</a>
+          <a href="/" style={{ color: "white", textDecoration: "none" }}>Inicio</a>
+          <a href="/sobre-mi" style={{ color: "white", textDecoration: "none" }}>Sobre Mí</a>
+          <a href="/proyectos" style={{ color: "white", textDecoration: "none" }}>Proyectos</a>
+          <a href="/testimonios" style={{ color: "white", textDecoration: "none" }}>Testimonios</a>
+          <a href="/contacto" style={{ color: "white", textDecoration: "none" }}>Contacto</a>
         </nav>
       )}
 
-      {/* Botones de tema + contactar */}
       <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
         <button
           onClick={toggleTheme}
@@ -100,7 +95,7 @@ export default function Navbar() {
         </button>
 
         <a
-          href="#contacto"
+          href="/contacto"
           style={{
             backgroundColor: "var(--primary)",
             color: "white",
