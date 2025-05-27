@@ -78,8 +78,8 @@ export default function SobreMi() {
               }}
             >
               {[
-                { titulo: "Desarrollo Frontend", detalle: "HTML, CSS, JavaScript, React" },
-                { titulo: "Frameworks", detalle: "Next.js, Tailwind CSS" },
+                { titulo: "Desarrollo Frontend", detalle: "HTML, CSS, React" },
+                { titulo: "Frameworks", detalle: "Flask, Tailwind CSS" },
                 { titulo: "Diseño UI/UX", detalle: "Figma" },
                 { titulo: "Herramientas", detalle: "Git, VS Code" },
               ].map((item, i) => (

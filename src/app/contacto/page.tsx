@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { Mail, Phone, Linkedin, Github, Instagram } from "lucide-react"
+import { Mail, Phone, Linkedin, Github, Instagram } from "lucide-react";
 
 export default function Contacto() {
   return (
@@ -163,5 +163,5 @@ export default function Contacto() {
         </div>
       </div>
     </section>
-  )
+  );
 }
