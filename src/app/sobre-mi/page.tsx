@@ -1,6 +1,19 @@
-"use client"
+"use client";
+
+import { useEffect, useState } from "react";
 
 export default function SobreMi() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <section
       style={{
@@ -13,7 +26,14 @@ export default function SobreMi() {
         color: "white",
       }}
     >
-      <h2 style={{ fontSize: "2.5rem", fontWeight: 700, color: "#2a8d53", marginBottom: "0.5rem" }}>
+      <h2
+        style={{
+          fontSize: "2.5rem",
+          fontWeight: 700,
+          color: "#2a8d53",
+          marginBottom: "0.5rem",
+        }}
+      >
         Sobre Mí
       </h2>
       <p style={{ marginBottom: "2rem", color: "#a1a1aa", textAlign: "center" }}>
@@ -26,7 +46,7 @@ export default function SobreMi() {
           maxWidth: "80rem",
           width: "100%",
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
+          gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
           gap: "2rem",
           marginBottom: "2rem",
           alignItems: "start",
@@ -40,14 +60,14 @@ export default function SobreMi() {
             borderRadius: "0.75rem",
             boxShadow: "0 4px 30px rgba(0,0,0,0.1)",
             width: "100%",
-            maxWidth: "32rem",
+            maxWidth: isMobile ? "100%" : "32rem",
           }}
         >
           <p>
-            Mi nombre es Erik Danilo Carlosama Muñoz, soy ingeniero en software.
+            Mi nombre es Erik Danilo Carlosama Muñoz, soy estudiante de Ingeniería de Software en formación.
           </p>
           <p style={{ marginTop: "1rem" }}>
-            Cuento con sólidos conocimientos.
+            Me apasiona el desarrollo de software y la tecnología, y actualmente estoy fortaleciendo mis conocimientos en programación, diseño de software, estructuras de datos y desarrollo web. Me caracterizo por ser una persona responsable, con actitud proactiva y muchas ganas de aprender y crecer profesionalmente, y estoy en constante búsqueda de oportunidades para aplicar lo aprendido en proyectos reales, mejorar mis habilidades y aportar valor a los equipos de trabajo con los que colaboro.
           </p>
         </div>
 
@@ -67,7 +87,13 @@ export default function SobreMi() {
               borderRadius: "0.75rem",
             }}
           >
-            <h3 style={{ color: "#2a8d53", fontWeight: 600, marginBottom: "1rem" }}>
+            <h3
+              style={{
+                color: "#2a8d53",
+                fontWeight: 600,
+                marginBottom: "1rem",
+              }}
+            >
               Mis Habilidades
             </h3>
             <div
@@ -150,5 +176,5 @@ export default function SobreMi() {
         </div>
       </div>
     </section>
-  )
+  );
 }

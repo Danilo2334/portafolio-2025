@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, Download } from "lucide-react"
+import { Download } from "lucide-react"
 
 export default function Inicio() {
   return (
@@ -101,36 +101,6 @@ export default function Inicio() {
               >
                 <Download style={{ width: "1rem", height: "1rem" }} />
                 Descargar CV
-              </a>
-              <a
-                href="#contacto"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: "0.5rem",
-                  padding: "0.75rem 1rem",
-                  border: "1px solid #3f3f46",
-                  color: "#a1a1aa",
-                  borderRadius: "9999px",
-                  fontSize: "0.875rem",
-                  fontWeight: 500,
-                  textDecoration: "none",
-                  transition: "all 0.3s",
-                  width: "100%",
-                  maxWidth: "240px",
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.borderColor = "#1a5d38"
-                  e.currentTarget.style.color = "#1a5d38"
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.borderColor = "#3f3f46"
-                  e.currentTarget.style.color = "#a1a1aa"
-                }}
-              >
-                Contactar
-                <ArrowRight style={{ width: "1rem", height: "1rem" }} />
               </a>
             </div>
           </div>

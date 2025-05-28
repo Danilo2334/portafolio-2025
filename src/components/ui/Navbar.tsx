@@ -1,21 +1,20 @@
 "use client"
 
 import Link from "next/link"
-import { Moon, Sun, Menu } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { useState, useEffect } from "react"
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(true)
   const [menuAbierto, setMenuAbierto] = useState(false)
   const [esMovil, setEsMovil] = useState(false)
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode)
-    document.documentElement.classList.toggle("dark", !darkMode)
-  }
-
   useEffect(() => {
-    const verificarTamaño = () => setEsMovil(window.innerWidth < 768)
+    const verificarTamaño = () => {
+      setEsMovil(window.innerWidth < 768)
+      if (window.innerWidth >= 768) {
+        setMenuAbierto(false)
+      }
+    }
     verificarTamaño()
     window.addEventListener("resize", verificarTamaño)
     return () => window.removeEventListener("resize", verificarTamaño)
@@ -25,10 +24,7 @@ export default function Navbar() {
     <header
       style={{
         width: "100%",
-        padding: "1rem 2rem",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
+        padding: "1rem 1.5rem",
         position: "fixed",
         top: 0,
         zIndex: 50,
@@ -36,85 +32,120 @@ export default function Navbar() {
         borderBottom: "1px solid var(--border)",
       }}
     >
-      <h1 style={{ fontWeight: 700, fontSize: "1.25rem", color: "#2a8d53" }}>
-        Danilo Carlosama
-      </h1>
+      <div
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        {/* Logo */}
+        <h1 style={{ fontWeight: 700, fontSize: "1.25rem", color: "#2a8d53" }}>
+          Danilo Carlosama
+        </h1>
 
-      {esMovil && (
-        <button
-          onClick={() => setMenuAbierto(!menuAbierto)}
-          style={{
-            background: "transparent",
-            border: "none",
-            color: "white",
-            fontSize: "1.5rem",
-            marginLeft: "auto",
-            marginRight: "1rem",
-          }}
-        >
-          <Menu />
-        </button>
-      )}
-
-      {(menuAbierto || !esMovil) && (
-        <nav
-          style={{
-            display: "flex",
-            flexDirection: esMovil ? "column" : "row",
-            gap: esMovil ? "1rem" : "1.5rem",
-            position: esMovil ? "absolute" : "static",
-            top: "4rem",
-            left: 0,
-            right: 0,
-            backgroundColor: esMovil ? "#121212" : "transparent",
-            padding: esMovil ? "1rem 2rem" : "0",
-          }}
-        >
-          <Link href="/"><span style={{ color: "white", textDecoration: "none" }}>Inicio</span></Link>
-          <Link href="/sobre-mi"><span style={{ color: "white", textDecoration: "none" }}>Sobre Mí</span></Link>
-          <Link href="/proyectos"><span style={{ color: "white", textDecoration: "none" }}>Proyectos</span></Link>
-          <Link href="/testimonios"><span style={{ color: "white", textDecoration: "none" }}>Testimonios</span></Link>
-          <Link href="/contacto"><span style={{ color: "white", textDecoration: "none" }}>Contacto</span></Link>
-        </nav>
-      )}
-
-      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-        <button
-          onClick={toggleTheme}
-          style={{
-            border: "1px solid var(--border)",
-            borderRadius: "0.5rem",
-            padding: "0.4rem 0.6rem",
-            backgroundColor: "transparent",
-            color: "#2a8d53",
-            display: "flex",
-            gap: "0.25rem",
-          }}
-        >
-          <Moon size={16} />
-          <Sun size={16} />
-        </button>
-
-        <Link href="/contacto">
-          <span
+        {/* Botón hamburguesa solo en móvil */}
+        {esMovil && (
+          <button
+            onClick={() => setMenuAbierto(!menuAbierto)}
             style={{
-              backgroundColor: "var(--primary)",
+              background: "transparent",
+              border: "none",
               color: "white",
-              padding: "0.5rem 1.25rem",
-              borderRadius: "9999px",
-              fontWeight: 500,
-              fontSize: "0.875rem",
-              textDecoration: "none",
-              lineHeight: "1",
-              display: "inline-block",
-              whiteSpace: "nowrap",
-              marginRight: "3.7rem",
+              padding: "0.25rem",
+              zIndex: 60,
+              marginRight: "1rem", // ⬅️ Mueve el botón más hacia la izquierda del borde
             }}
           >
-            Contactar
-          </span>
-        </Link>
+            {menuAbierto ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        )}
+
+        {/* Navegación en escritorio */}
+        {!esMovil && (
+          <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+            <nav style={{ display: "flex", gap: "1.5rem" }}>
+              <Link href="/" style={{ textDecoration: "none" }}>
+                <span style={{ color: "white" }}>Inicio</span>
+              </Link>
+              <Link href="/sobre-mi" style={{ textDecoration: "none" }}>
+                <span style={{ color: "white" }}>Sobre Mí</span>
+              </Link>
+              <Link href="/proyectos" style={{ textDecoration: "none" }}>
+                <span style={{ color: "white" }}>Proyectos</span>
+              </Link>
+              <Link href="/testimonios" style={{ textDecoration: "none" }}>
+                <span style={{ color: "white" }}>Testimonios</span>
+              </Link>
+            </nav>
+
+            <Link href="/contacto" style={{ textDecoration: "none" }}>
+              <span
+                style={{
+                  backgroundColor: "var(--primary, #1a5d38)",
+                  color: "white",
+                  padding: "0.5rem 1.25rem",
+                  borderRadius: "9999px",
+                  fontWeight: 500,
+                  fontSize: "0.875rem",
+                  lineHeight: "1",
+                  display: "inline-block",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Contactar
+              </span>
+            </Link>
+          </div>
+        )}
       </div>
+
+      {/* Menú desplegable para móvil */}
+      {esMovil && menuAbierto && (
+        <nav
+          style={{
+            marginTop: "1rem",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "1rem",
+            backgroundColor: "#1a1a1a",
+            padding: "1rem",
+            borderRadius: "0.5rem",
+          }}
+        >
+          <Link href="/" style={{ textDecoration: "none" }} onClick={() => setMenuAbierto(false)}>
+            <span style={{ color: "white" }}>Inicio</span>
+          </Link>
+          <Link href="/sobre-mi" style={{ textDecoration: "none" }} onClick={() => setMenuAbierto(false)}>
+            <span style={{ color: "white" }}>Sobre Mí</span>
+          </Link>
+          <Link href="/proyectos" style={{ textDecoration: "none" }} onClick={() => setMenuAbierto(false)}>
+            <span style={{ color: "white" }}>Proyectos</span>
+          </Link>
+          <Link href="/testimonios" style={{ textDecoration: "none" }} onClick={() => setMenuAbierto(false)}>
+            <span style={{ color: "white" }}>Testimonios</span>
+          </Link>
+          <Link href="/contacto" style={{ textDecoration: "none" }} onClick={() => setMenuAbierto(false)}>
+            <span
+              style={{
+                backgroundColor: "var(--primary, #1a5d38)",
+                color: "white",
+                padding: "0.5rem 1.25rem",
+                borderRadius: "9999px",
+                fontWeight: 500,
+                fontSize: "0.875rem",
+                lineHeight: "1",
+                display: "inline-block",
+              }}
+            >
+              Contactar
+            </span>
+          </Link>
+        </nav>
+      )}
     </header>
   )
 }

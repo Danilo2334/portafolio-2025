@@ -25,7 +25,6 @@ export default function Footer() {
           gap: "2rem",
         }}
       >
-        {/* Nombre y rol */}
         <div>
           <h3 style={{ color: "#2a8d53", fontSize: "1rem", marginBottom: "0.5rem" }}>
             Danilo Carlosama
@@ -35,7 +34,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Enlaces rápidos */}
         <div>
           <h4
             style={{
@@ -55,48 +53,21 @@ export default function Footer() {
               lineHeight: "1.8",
             }}
           >
-            <li>
-              <Link href="/" style={{ color: "#d4d4d8", textDecoration: "none" }}>
-                Inicio
-              </Link>
-            </li>
-            <li>
-              <Link href="/sobre-mi" style={{ color: "#d4d4d8", textDecoration: "none" }}>
-                Sobre Mí
-              </Link>
-            </li>
-            <li>
-              <Link href="/proyectos" style={{ color: "#d4d4d8", textDecoration: "none" }}>
-                Proyectos
-              </Link>
-            </li>
-            <li>
-              <Link href="/testimonios" style={{ color: "#d4d4d8", textDecoration: "none" }}>
-                Testimonios
-              </Link>
-            </li>
-            <li>
-              <Link href="/contacto" style={{ color: "#d4d4d8", textDecoration: "none" }}>
-                Contacto
-              </Link>
-            </li>
+            <li><Link href="/" style={{ color: "#d4d4d8", textDecoration: "none" }}>Inicio</Link></li>
+            <li><Link href="/sobre-mi" style={{ color: "#d4d4d8", textDecoration: "none" }}>Sobre Mí</Link></li>
+            <li><Link href="/proyectos" style={{ color: "#d4d4d8", textDecoration: "none" }}>Proyectos</Link></li>
+            <li><Link href="/testimonios" style={{ color: "#d4d4d8", textDecoration: "none" }}>Testimonios</Link></li>
+            <li><Link href="/contacto" style={{ color: "#d4d4d8", textDecoration: "none" }}>Contacto</Link></li>
           </ul>
         </div>
 
-        {/* Redes sociales */}
         <div>
-          <h4
-            style={{
-              fontSize: "0.875rem",
-              fontWeight: 700,
-              marginBottom: "0.5rem",
-            }}
-          >
+          <h4 style={{ fontSize: "0.875rem", fontWeight: 700, marginBottom: "0.5rem" }}>
             Redes sociales
           </h4>
           <div style={{ display: "flex", gap: "0.75rem" }}>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/danilo-mu%C3%B1oz-6b0b19367"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#d4d4d8", transition: "color 0.3s" }}
@@ -129,7 +100,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Derechos reservados */}
       <div
         style={{
           marginTop: "2rem",

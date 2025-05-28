@@ -5,10 +5,10 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
 
 const testimonios = [
   {
-    autor: "Profesor García",
-    cargo: "Profesor de Desarrollo Web",
+    autor: "Compañera Camila Zambrano",
+    cargo: "Estudiante Ing Software",
     mensaje:
-      "Un estudiante excepcional con gran capacidad para resolver problemas complejos. Sus proyectos siempre destacan por su calidad y atención al detalle.",
+      "Un estudiante excepcional con gran capacidad para resolver problemas complejos. Su ayuda es crucial al realizar grupos de trabajo.",
   },
   {
     autor: "Compañero Sebastian Rojas",
@@ -53,18 +53,21 @@ export default function Testimonios() {
         style={{
           maxWidth: "800px",
           width: "100%",
-          position: "relative",
           backgroundColor: "#1a1a1a",
           padding: "2rem",
           borderRadius: "0.75rem",
           boxShadow: "0 4px 30px rgba(0,0,0,0.1)",
-          transition: "transform 0.6s ease",
+          position: "relative",
         }}
       >
-        <Quote color="#2a8d53" size={32} />
+        <div style={{ marginBottom: "1rem" }}>
+          <Quote color="#2a8d53" size={32} />
+        </div>
+
         <p style={{ fontSize: "1.25rem", margin: "1rem 0", lineHeight: 1.6 }}>
           "{testimonios[actual].mensaje}"
         </p>
+
         <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginTop: "2rem" }}>
           <div
             style={{
@@ -80,41 +83,42 @@ export default function Testimonios() {
           </div>
         </div>
 
-        <button
-          onClick={retroceder}
+        {/* Botones de navegación abajo, centrados y separados */}
+        <div
           style={{
-            position: "absolute",
-            left: "-2rem",
-            top: "50%",
-            transform: "translateY(-50%)",
-            background: "#1a1a1a",
-            border: "1px solid #333",
-            borderRadius: "9999px",
-            padding: "0.5rem",
-            color: "white",
+            display: "flex",
+            justifyContent: "space-between",
+            marginTop: "2rem",
           }}
-          aria-label="Anterior"
         >
-          <ChevronLeft size={20} />
-        </button>
+          <button
+            onClick={retroceder}
+            style={{
+              background: "#1a1a1a",
+              border: "1px solid #333",
+              borderRadius: "9999px",
+              padding: "0.5rem",
+              color: "white",
+            }}
+            aria-label="Anterior"
+          >
+            <ChevronLeft size={20} />
+          </button>
 
-        <button
-          onClick={avanzar}
-          style={{
-            position: "absolute",
-            right: "-2rem",
-            top: "50%",
-            transform: "translateY(-50%)",
-            background: "#1a1a1a",
-            border: "1px solid #333",
-            borderRadius: "9999px",
-            padding: "0.5rem",
-            color: "white",
-          }}
-          aria-label="Siguiente"
-        >
-          <ChevronRight size={20} />
-        </button>
+          <button
+            onClick={avanzar}
+            style={{
+              background: "#1a1a1a",
+              border: "1px solid #333",
+              borderRadius: "9999px",
+              padding: "0.5rem",
+              color: "white",
+            }}
+            aria-label="Siguiente"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
       </div>
 
       <div style={{ marginTop: "1.5rem", display: "flex", gap: "0.5rem" }}>

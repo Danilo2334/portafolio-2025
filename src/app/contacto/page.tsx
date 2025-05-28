@@ -1,10 +1,21 @@
-"use client";
+"use client"
 
-import { Mail, Phone, Linkedin, Github, Instagram } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Instagram } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export default function Contacto() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 768)
+    checkScreen()
+    window.addEventListener("resize", checkScreen)
+    return () => window.removeEventListener("resize", checkScreen)
+  }, [])
+
   return (
     <section
+      id="contacto"
       style={{
         minHeight: "100vh",
         padding: "4rem 1.5rem 2rem",
@@ -27,11 +38,13 @@ export default function Contacto() {
           maxWidth: "80rem",
           width: "100%",
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
+          gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
           gap: "2rem",
         }}
       >
         <form
+          action="https://formsubmit.co/danilocarlosama96@gmail.com"
+          method="POST"
           style={{
             backgroundColor: "#1a1a1a",
             padding: "2rem",
@@ -41,25 +54,37 @@ export default function Contacto() {
             gap: "1rem",
           }}
         >
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://tu-dominio.com/gracias" />
           <h3 style={{ color: "#2a8d53", fontWeight: 600 }}>Envíame un mensaje</h3>
+
           <label style={{ fontWeight: 500 }}>Nombre</label>
           <input
             type="text"
+            name="nombre"
+            required
             placeholder="Tu nombre"
             style={{ padding: "0.5rem", borderRadius: "0.5rem", border: "none" }}
           />
+
           <label style={{ fontWeight: 500 }}>Email</label>
           <input
             type="email"
+            name="email"
+            required
             placeholder="tu@email.com"
             style={{ padding: "0.5rem", borderRadius: "0.5rem", border: "none" }}
           />
+
           <label style={{ fontWeight: 500 }}>Mensaje</label>
           <textarea
+            name="mensaje"
             rows={5}
+            required
             placeholder="Tu mensaje"
             style={{ padding: "0.5rem", borderRadius: "0.5rem", border: "none" }}
           />
+
           <button
             type="submit"
             style={{
@@ -89,32 +114,13 @@ export default function Contacto() {
             </h3>
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.5rem" }}>
               <Mail size={20} />
-              <a
-                href="mailto:danilocarlosama96@gmail.com"
-                style={{
-                  color: "#d4d4d8",
-                  textDecoration: "none",
-                  transition: "color 0.3s",
-                }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#2a8d53")}
-                onMouseLeave={e => (e.currentTarget.style.color = "#d4d4d8")}
-              >
+              <a href="mailto:danilocarlosama96@gmail.com" style={{ color: "#d4d4d8", textDecoration: "none" }}>
                 danilocarlosama96@gmail.com
               </a>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
               <Phone size={20} />
-              <a
-                href="https://wa.me/573117916236"
-                target="_blank"
-                style={{
-                  color: "#d4d4d8",
-                  textDecoration: "none",
-                  transition: "color 0.3s",
-                }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#2a8d53")}
-                onMouseLeave={e => (e.currentTarget.style.color = "#d4d4d8")}
-              >
+              <a href="https://wa.me/573117916236" target="_blank" style={{ color: "#d4d4d8", textDecoration: "none" }}>
                 +57 3117916236
               </a>
             </div>
@@ -131,31 +137,13 @@ export default function Contacto() {
               Redes sociales
             </h3>
             <div style={{ display: "flex", gap: "1rem" }}>
-              <a
-                href="https://www.linkedin.com"
-                target="_blank"
-                style={{ color: "white", transition: "color 0.3s" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#2a8d53")}
-                onMouseLeave={e => (e.currentTarget.style.color = "white")}
-              >
+              <a href="https://www.linkedin.com/in/danilo-mu%C3%B1oz-6b0b19367" target="_blank" style={{ color: "white" }}>
                 <Linkedin />
               </a>
-              <a
-                href="https://github.com/Danilo2334"
-                target="_blank"
-                style={{ color: "white", transition: "color 0.3s" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#2a8d53")}
-                onMouseLeave={e => (e.currentTarget.style.color = "white")}
-              >
+              <a href="https://github.com/Danilo2334" target="_blank" style={{ color: "white" }}>
                 <Github />
               </a>
-              <a
-                href="https://instagram.com/daniloc_0"
-                target="_blank"
-                style={{ color: "white", transition: "color 0.3s" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#2a8d53")}
-                onMouseLeave={e => (e.currentTarget.style.color = "white")}
-              >
+              <a href="https://instagram.com/daniloc_0" target="_blank" style={{ color: "white" }}>
                 <Instagram />
               </a>
             </div>
@@ -163,5 +151,5 @@ export default function Contacto() {
         </div>
       </div>
     </section>
-  );
+  )
 }
