@@ -26,16 +26,16 @@ export default function Footer() {
         }}
       >
         <div>
-          <h3 style={{ color: "#2a8d53", fontSize: "1rem", marginBottom: "0.5rem" }}>
+          <h2 style={{ color: "#2a8d53", fontSize: "1rem", marginBottom: "0.5rem" }}>
             Danilo Carlosama
-          </h3>
+          </h2>
           <p style={{ fontSize: "0.875rem", color: "#a1a1aa" }}>
             Ingeniero de Software
           </p>
         </div>
 
         <div>
-          <h4
+          <h3
             style={{
               fontSize: "0.875rem",
               fontWeight: 700,
@@ -43,7 +43,7 @@ export default function Footer() {
             }}
           >
             Enlaces rápidos
-          </h4>
+          </h3>
           <ul
             style={{
               listStyle: "none",
@@ -62,9 +62,9 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 style={{ fontSize: "0.875rem", fontWeight: 700, marginBottom: "0.5rem" }}>
+          <h3 style={{ fontSize: "0.875rem", fontWeight: 700, marginBottom: "0.5rem" }}>
             Redes sociales
-          </h4>
+          </h3>
           <div style={{ display: "flex", gap: "0.75rem" }}>
             <a
               href="https://www.linkedin.com/in/danilo-mu%C3%B1oz-6b0b19367"
